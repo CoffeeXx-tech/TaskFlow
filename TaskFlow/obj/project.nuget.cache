@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "JSzpA9GxMBA=",
+  "success": true,
+  "projectFilePath": "D:\\GitHubProjects\\TaskFlow\\TaskFlow\\TaskFlow.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\legen\\.nuget\\packages\\spectre.console\\0.50.0\\spectre.console.0.50.0.nupkg.sha512",
+    "C:\\Users\\legen\\.nuget\\packages\\system.memory\\4.6.3\\system.memory.4.6.3.nupkg.sha512"
+  ],
+  "logs": []
+}
