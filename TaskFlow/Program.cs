@@ -5,19 +5,31 @@ class Program
 {
     static void Main()
     {
+        var escListener = new EscListener();
+        escListener.StartListening();
+        
+        var authService = new AuthService(); 
         bool running = true;
 
         while (running)
         {
             
-            Console.Clear();
+        Console.Clear();
+        
 
-AnsiConsole.Write(
+        AnsiConsole.Write(
                 new FigletText("FlowTask")
                     .Color(Color.SkyBlue1)
                     .Centered());
-
-            AnsiConsole.MarkupLine("[bold lightseagreen]Welcome to FlowTask![/]");
+            if (authService.CurrentUser != null)
+        {
+            AnsiConsole.MarkupLine($"[skyblue1]Welcome, {authService.CurrentUser.Username}![/]");
+        }
+        else
+        {
+            AnsiConsole.MarkupLine("[skyblue1]Welcome to FlowTask![/]");
+            AnsiConsole.MarkupLine("[bold orange1]You are not logged in. Choose 1 to log in.[/]");
+        }
             var table = new Table();
             table.Border = TableBorder.Rounded;
             table.BorderColor(Color.LightSeaGreen);
@@ -25,18 +37,17 @@ AnsiConsole.Write(
             table.AddColumn("[bold lightseagreen]Description[/]");
 
             table.AddRow("[aquamarine1]1[/]", "[white]Login[/]");
-            table.AddRow("[aquamarine1]2[/]", "[white]Add Task[/]");
-            table.AddRow("[aquamarine1]3[/]", "[white]Show Tasks[/]");
-            table.AddRow("[aquamarine1]4[/]", "[white]Mark Task Completed[/]");
-            table.AddRow("[aquamarine1]5[/]", "[white]Statistics[/]");
-            table.AddRow("[aquamarine1]6[/]", "[white]Calendar Sync[/]");
+            table.AddRow("[aquamarine1]2[/]", "[white]Register New User[/]");
+            table.AddRow("[aquamarine1]3[/]", "[white]Add Task[/]");
+            table.AddRow("[aquamarine1]4[/]", "[white]Show Tasks[/]");
+            table.AddRow("[aquamarine1]5[/]", "[white]Mark Task Completed[/]");
+            table.AddRow("[aquamarine1]6[/]", "[white]Statistics[/]");
+            table.AddRow("[aquamarine1]7[/]", "[white]Calendar Sync[/]");
+            table.AddRow("[aquamarine1]8[/]", "[white]Logout[/]");
             table.AddRow("[lightSalmon1]0[/]", "[lightSalmon1]Exit[/]");
 
             AnsiConsole.Write(table);
 
-
-
-//
             string? choice; // Initialize choice variable, can hold text or null
 
         do
@@ -53,27 +64,41 @@ AnsiConsole.Write(
 
             choice = choice.Trim(); // Remove any leading or trailing whitespace
 
-
             switch (choice)
             {
                 case "1":
-                    AnsiConsole.MarkupLine("[green]Login function (to be implemented)...[/]");
+                    authService.Login();
                     break;
                 case "2":
-                    AnsiConsole.MarkupLine("[green]Add task function (to be implemented)...[/]");
+                    authService.Register();
                     break;
                 case "3":
-                    AnsiConsole.MarkupLine("[green]Show tasks function (to be implemented)...[/]");
+                    AnsiConsole.MarkupLine("[green]Add task function (to be implemented)...[/]");
                     break;
                 case "4":
-                    AnsiConsole.MarkupLine("[green]Mark task as completed function (to be implemented)...[/]");
+                    AnsiConsole.MarkupLine("[green]Show tasks function (to be implemented)...[/]");
                     break;
                 case "5":
-                    AnsiConsole.MarkupLine("[green]Statistics function (to be implemented)...[/]");
+                    AnsiConsole.MarkupLine("[green]Mark task as completed function (to be implemented)...[/]");
                     break;
                 case "6":
+                    AnsiConsole.MarkupLine("[green]Statistics function (to be implemented)...[/]");
+                    break;
+                case "7":
                     AnsiConsole.MarkupLine("[green]Calendar sync function (to be implemented)...[/]");
                     break;
+                case "8":
+                    if (authService.CurrentUser != null)
+                        {
+                            authService.Logout();
+                            AnsiConsole.MarkupLine("[bold orange1]You have been logged out.[/]");
+                        }
+                    else
+                        {
+                            AnsiConsole.MarkupLine("[orangered1]You are not logged in.[/]");
+                        }
+                    break;
+
                 case "0":
                     running = false;
                     AnsiConsole.MarkupLine("[bold orange1]Goodbye![/]");
