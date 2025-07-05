@@ -1,34 +1,22 @@
 [
   {
     "Username": "admin",
-    "Password": "admin123"
+    "Password": "admin123",
+    "Tasks": []
   },
   {
     "Username": "user1",
-    "Password": "pass1"
+    "Password": "pass1",
+    "Tasks": []
   },
   {
-    "Username": "oliana",
-    "Password": "kannsa"
+    "Username": "ffssf",
+    "Password": "aAa67*",
+    "Tasks": []
   },
   {
-    "Username": "f",
-    "Password": "4"
-  },
-  {
-    "Username": "sddasdadsasdasd",
-    "Password": "Kremowka43*"
-  },
-  {
-    "Username": "Copylot",
-    "Password": "a#b$0cA"
-  },
-  {
-    "Username": "AAaaaa",
-    "Password": "A1!aa"
-  },
-  {
-    "Username": "yallooo",
-    "Password": "Ab6**"
+    "Username": "deama",
+    "Password": "Ab3*7",
+    "Tasks": []
   }
 ]
