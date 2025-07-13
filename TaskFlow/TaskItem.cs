@@ -9,11 +9,14 @@ public class TaskItem
     public DateTime? CompletedTime { get; set; } = null;
     public DateTime? Deadline { get; set; } = null;
 
+    public string Priority { get; set; } = "Medium"; 
+
     public bool IsStarted { get; set; } = false;
     public bool IsCompleted { get; set; } = false;
 
     public string Category { get; set; } = "none";
-    public string Priority { get; set; } = "Normal"; 
+
+
     public TimeSpan? Duration => (IsCompleted && StartTime != null && CompletedTime != null)
         ? CompletedTime - StartTime
         : null;

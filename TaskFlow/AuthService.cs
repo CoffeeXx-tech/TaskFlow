@@ -40,7 +40,7 @@ public class AuthService
 
         do
         {
-            Console.Write("Enter username: ");
+            AnsiConsole.Markup("Enter [skyblue1]username[/]: ");
             username = Console.ReadLine()?.Trim() ?? "";
             if (string.IsNullOrWhiteSpace(username))
             {
@@ -50,7 +50,7 @@ public class AuthService
 
         do
         {
-            Console.Write("Enter password: ");
+            AnsiConsole.Markup("Enter [skyblue1]password[/]: ");
             password = ReadPassword()?.Trim() ?? "";
             if (string.IsNullOrWhiteSpace(password))
             {
@@ -63,7 +63,7 @@ public class AuthService
             if (user.Username == username && user.Password == password)
             {
                 CurrentUser = user;
-                Console.WriteLine("Login successful!");
+                AnsiConsole.MarkupLine($"[bold skyblue1]Login successful![/]");
                 return true;
             }
         }
@@ -81,7 +81,7 @@ public class AuthService
 
         do
         {
-            Console.Write("Choose username (min. 5 characters, letters or digits): ");
+            AnsiConsole.MarkupLine($"[skyblue1]Choose username[/] (min. 5 characters, letters or digits): ");
             username = Console.ReadLine()?.Trim() ?? "";
 
             if (string.IsNullOrWhiteSpace(username) || username.Length < 5 || !Regex.IsMatch(username, @"^[a-zA-Z0-9]+$"))
@@ -102,7 +102,7 @@ public class AuthService
 
         do
         {
-            Console.Write("Choose password (min. 5 characters, at least 1 digit, 1 lowercase, 1 uppercase, 1 special): ");
+            AnsiConsole.MarkupLine($"[skyblue1]Choose password[/] (min. 5 characters, at least 1 digit, 1 lowercase, 1 uppercase, 1 special): ");
             password = Console.ReadLine()?.Trim() ?? "";
 
             Console.Write("Confirm password: ");
@@ -126,7 +126,7 @@ public class AuthService
 
         users.Add(new User { Username = username, Password = password });
         SaveUsers();
-        Console.WriteLine("User registered successfully.");
+        AnsiConsole.MarkupLine($"User registered [skyblue1]successfully.[/]");
     }
 
     private static string ReadPassword()
@@ -179,7 +179,7 @@ public class AuthService
     {
         if (CurrentUser == null)
         {
-            Console.WriteLine("Please log in to add a task.");
+            AnsiConsole.MarkupLine($"Please [orangered1]log in[/] to add a task.");
             return;
         }
 
@@ -189,13 +189,20 @@ public class AuthService
         Console.Write("Task description: ");
         string description = Console.ReadLine()?.Trim() ?? "";
 
+        var selected = AnsiConsole.Prompt(
+    new SelectionPrompt<string>()
+        .Title("[aquamarine1]Select priority:[/]")
+        .AddChoices("High", "Medium", "Low")
+);
+
         var task = new TaskItem
         {
             Title = title,
             Description = description,
             RegisteredTime = DateTime.Now,
             IsStarted = false,
-            IsCompleted = false
+            IsCompleted = false,
+            Priority = selected
         };
 
         CurrentUser.Tasks.Add(task);
@@ -246,7 +253,7 @@ public class AuthService
     {
         if (CurrentUser == null)
         {
-            Console.WriteLine("Please log in to complete a task.");
+            AnsiConsole.MarkupLine("Please [orangered1]log in[/] to complete a task.");
             return;
         }
 
@@ -280,29 +287,5 @@ public class AuthService
             Console.WriteLine("Invalid selection.");
         }
     }
-
-public void CreateNewCategory()
-{
-    AnsiConsole.MarkupLine("[bold blue]Create a [green]new category[/]:[/]");
-
-    string name = AnsiConsole.Ask<string>("Enter category name (max 20 characters):").Trim();
-    if (name.Length > 20)
-    {
-        name = name.Substring(0, 20);
-        AnsiConsole.MarkupLine("[grey]Category name was truncated to 20 characters.[/]");
-    }
-
-    var color = AnsiConsole.Prompt(
-        new SelectionPrompt<string>()
-            .Title("Choose a [green]category color[/]:")
-            .AddChoices(new[] {
-                "red", "green", "blue", "yellow", "cyan", "magenta", "white", "grey"
-            }));
-
-    string formattedCategory = $"[{color}]{name}[/]";
-    AnsiConsole.MarkupLine($"\n[bold green]Created category:[/] {formattedCategory}");
-
-    // Możesz też zapisać ją np. do pliku albo listy, jeśli chcesz je później wybierać
-}
 
 }

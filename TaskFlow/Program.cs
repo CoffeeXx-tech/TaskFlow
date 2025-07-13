@@ -1,12 +1,14 @@
 ﻿using System;
 using Spectre.Console;
-// TaskFlow - A simple task management application
 class Program
 {
     static void Main()
     {        
         var authService = new AuthService(); 
         var taskService = new TaskService();
+        CategoryService categoryService = new CategoryService();
+        User? currentUser = null;
+
         bool running = true;
 
         while (running)
@@ -41,7 +43,7 @@ if (authService.CurrentUser == null)
 
     loginTable.AddRow("[aquamarine1]1[/]", "[white]Login[/]");
     loginTable.AddRow("[aquamarine1]2[/]", "[white]Register New User[/]");
-    loginTable.AddRow("[lightSalmon1]0[/]", "[lightSalmon1]Exit[/]");
+    loginTable.AddRow("[orangered1]0[/]", "[orangered1]Exit[/]");
 
     AnsiConsole.Write(loginTable);
 }
@@ -50,16 +52,16 @@ else
     var functionTable = new Table();
     functionTable.Title("📋 FlowTask Menu");
     functionTable.Border = TableBorder.Rounded;
-    functionTable.BorderColor(Color.LightSeaGreen);
-    functionTable.AddColumn("[bold lightseagreen]Option[/]");
-    functionTable.AddColumn("[bold lightseagreen]Description[/]");
+    functionTable.BorderColor(Color.SkyBlue1);
+    functionTable.AddColumn("[bold skyblue1]Option[/]");
+    functionTable.AddColumn("[bold skyblue1]Description[/]");
 
     functionTable.AddRow("[aquamarine1]3[/]", "[white]Add Task[/]");
     functionTable.AddRow("[aquamarine1]4[/]", "[white]Show Tasks[/]");
     functionTable.AddRow("[aquamarine1]5[/]", "[white]New category[/]");
     functionTable.AddRow("[aquamarine1]6[/]", "[white]Categories[/]");
-    functionTable.AddRow("[yellow]8[/]", "[yellow]Logout[/]");
-    functionTable.AddRow("[lightSalmon1]0[/]", "[lightSalmon1]Exit[/]");
+    functionTable.AddRow("[lightSalmon1]8[/]", "[lightSalmon1]Logout[/]");
+    functionTable.AddRow("[orangered1]0[/]", "[orangered1]Exit[/]");
 
     AnsiConsole.Write(functionTable);
 }
@@ -83,15 +85,26 @@ else
             switch (choice)
             {
                 case "1":
-                    authService.Login();
-                    break;
+        if (currentUser != null)
+        {
+            AnsiConsole.MarkupLine("[yellow]You are already logged in.[/]");
+            break;
+        }
+        authService.Login();
+        currentUser = authService.CurrentUser;
+        break;
                 case "2":
-                    authService.Register();
-                    break;
+        if (currentUser != null)
+        {
+            AnsiConsole.MarkupLine("[yellow]You are already logged in.[/]");
+            break;
+        }
+        authService.Register();
+        break;
                 case "3":
                     if (authService.CurrentUser != null)
                         {
-                            taskService.AddTask(authService.CurrentUser);
+                            taskService.AddTask(authService.CurrentUser, categoryService);
                         }
                     else
                         {
@@ -100,23 +113,42 @@ else
                     break;
                 case "4":
                     if (authService.CurrentUser != null)
-                        {
-                            taskService.ShowTasks(authService.CurrentUser);
+                    {
+                        taskService.ShowTasks(authService.CurrentUser, categoryService);
+
                         }
                     else
-                        {
-                            Console.WriteLine("You must be logged in to view tasks.");
-                        }
+                    {
+                        Console.WriteLine("You must be logged in to view tasks.");
+                    }
                     break;
                 case "5":
-                    AnsiConsole.MarkupLine("[green]Mark task as completed function (to be implemented)...[/]");
-                    break;
+    if (authService.CurrentUser != null)
+    {
+        categoryService.AddCategory(authService.CurrentUser);
+    }
+    else
+    {
+        AnsiConsole.MarkupLine("[orangered1]You must be logged in to add a category.[/]");
+    }
+    break;
+
                 case "6":
-                    AnsiConsole.MarkupLine("[green]Statistics function (to be implemented)...[/]");
-                    break;
-                case "7":
-                    AnsiConsole.MarkupLine("[green]Calendar sync function (to be implemented)...[/]");
-                    break;
+    if (authService.CurrentUser != null)
+    {
+        categoryService.ShowCategories(authService.CurrentUser);
+
+        if (AnsiConsole.Confirm("Do you want to edit a category?"))
+        {
+            categoryService.EditCategory(authService.CurrentUser);
+        }
+    }
+    else
+    {
+        Console.WriteLine("You must be logged in to view categories.");
+    }
+    break;
+
                 case "8":
                     if (authService.CurrentUser != null)
                     {

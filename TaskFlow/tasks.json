@@ -4,13 +4,13 @@
       "Title": "Buy groceries",
       "Description": "Purchase milk, eggs, and bread from the store.",
       "RegisteredTime": "2025-07-01T09:00:00",
-      "StartTime": null,
+      "StartTime": "2025-07-09T22:37:50.2951503+02:00",
       "CompletedTime": null,
       "Deadline": "2025-07-02T20:00:00",
-      "IsStarted": false,
+      "Priority": "Medium",
+      "IsStarted": true,
       "IsCompleted": false,
       "Category": "Personal",
-      "Priority": "Medium",
       "Duration": null
     },
     {
@@ -20,10 +20,10 @@
       "StartTime": null,
       "CompletedTime": null,
       "Deadline": "2025-07-01T12:00:00",
+      "Priority": "High",
       "IsStarted": false,
       "IsCompleted": false,
       "Category": "Work",
-      "Priority": "High",
       "Duration": null
     },
     {
@@ -33,10 +33,10 @@
       "StartTime": null,
       "CompletedTime": null,
       "Deadline": "2025-07-02T17:00:00",
+      "Priority": "High",
       "IsStarted": false,
       "IsCompleted": false,
       "Category": "Work",
-      "Priority": "High",
       "Duration": null
     },
     {
@@ -46,10 +46,10 @@
       "StartTime": null,
       "CompletedTime": null,
       "Deadline": "2025-07-01T15:00:00",
+      "Priority": "High",
       "IsStarted": false,
       "IsCompleted": false,
       "Category": "Health",
-      "Priority": "High",
       "Duration": null
     },
     {
@@ -59,10 +59,10 @@
       "StartTime": null,
       "CompletedTime": null,
       "Deadline": "2025-07-03T14:00:00",
+      "Priority": "High",
       "IsStarted": false,
       "IsCompleted": false,
       "Category": "Work",
-      "Priority": "High",
       "Duration": null
     },
     {
@@ -72,10 +72,10 @@
       "StartTime": null,
       "CompletedTime": null,
       "Deadline": "2025-07-02T18:00:00",
+      "Priority": "Medium",
       "IsStarted": false,
       "IsCompleted": false,
       "Category": "Personal",
-      "Priority": "Medium",
       "Duration": null
     },
     {
@@ -85,10 +85,10 @@
       "StartTime": null,
       "CompletedTime": null,
       "Deadline": null,
+      "Priority": "Low",
       "IsStarted": false,
       "IsCompleted": false,
       "Category": "Personal",
-      "Priority": "Low",
       "Duration": null
     },
     {
@@ -98,24 +98,24 @@
       "StartTime": null,
       "CompletedTime": null,
       "Deadline": null,
+      "Priority": "Medium",
       "IsStarted": false,
       "IsCompleted": false,
       "Category": "Personal",
-      "Priority": "Medium",
       "Duration": null
     },
     {
       "Title": "Plan vacation",
       "Description": "Research destinations and book flights for summer vacation.",
       "RegisteredTime": "2025-07-01T13:00:00",
-      "StartTime": null,
-      "CompletedTime": null,
+      "StartTime": "2025-07-07T15:10:58.2536816+02:00",
+      "CompletedTime": "2025-07-07T15:11:26.190898+02:00",
       "Deadline": null,
-      "IsStarted": false,
-      "IsCompleted": false,
-      "Category": "Personal",
       "Priority": "Low",
-      "Duration": null
+      "IsStarted": false,
+      "IsCompleted": true,
+      "Category": "Personal",
+      "Duration": "00:00:27.9372164"
     },
     {
       "Title": "Attend webinar",
@@ -124,10 +124,10 @@
       "StartTime": null,
       "CompletedTime": null,
       "Deadline": null,
+      "Priority": "Low",
       "IsStarted": false,
       "IsCompleted": false,
       "Category": "Education",
-      "Priority": "Low",
       "Duration": null
     },
     {
@@ -137,10 +137,127 @@
       "StartTime": null,
       "CompletedTime": null,
       "Deadline": null,
+      "Priority": "Normal",
       "IsStarted": false,
       "IsCompleted": false,
       "Category": "none",
+      "Duration": null
+    },
+    {
+      "Title": "Task",
+      "Description": "descripron",
+      "RegisteredTime": "2025-07-08T21:57:44.377189+02:00",
+      "StartTime": null,
+      "CompletedTime": null,
+      "Deadline": null,
       "Priority": "Normal",
+      "IsStarted": false,
+      "IsCompleted": false,
+      "Category": "Food",
+      "Duration": null
+    },
+    {
+      "Title": "Taskk",
+      "Description": "sassda",
+      "RegisteredTime": "2025-07-08T21:58:17.9131302+02:00",
+      "StartTime": null,
+      "CompletedTime": null,
+      "Deadline": null,
+      "Priority": "Normal",
+      "IsStarted": false,
+      "IsCompleted": false,
+      "Category": "Uncategorized",
+      "Duration": null
+    },
+    {
+      "Title": "Tak",
+      "Description": "ssssa",
+      "RegisteredTime": "2025-07-08T22:01:28.5608609+02:00",
+      "StartTime": null,
+      "CompletedTime": null,
+      "Deadline": null,
+      "Priority": "Normal",
+      "IsStarted": false,
+      "IsCompleted": false,
+      "Category": "Uncategorized",
+      "Duration": null
+    },
+    {
+      "Title": "sasasas",
+      "Description": "sdaas",
+      "RegisteredTime": "2025-07-08T22:04:11.4411439+02:00",
+      "StartTime": null,
+      "CompletedTime": null,
+      "Deadline": null,
+      "Priority": "Normal",
+      "IsStarted": false,
+      "IsCompleted": false,
+      "Category": "Uncategorized",
+      "Duration": null
+    },
+    {
+      "Title": "sdsda",
+      "Description": "sasad",
+      "RegisteredTime": "2025-07-08T22:41:11.3848557+02:00",
+      "StartTime": null,
+      "CompletedTime": null,
+      "Deadline": null,
+      "Priority": "Normal",
+      "IsStarted": false,
+      "IsCompleted": false,
+      "Category": "Uncategorized",
+      "Duration": null
+    },
+    {
+      "Title": "ttff",
+      "Description": "fdfgdf",
+      "RegisteredTime": "2025-07-09T00:35:26.1861398+02:00",
+      "StartTime": null,
+      "CompletedTime": null,
+      "Deadline": null,
+      "Priority": "Medium",
+      "IsStarted": false,
+      "IsCompleted": false,
+      "Category": "ffdssdf",
+      "Duration": null
+    },
+    {
+      "Title": "dfdffddf",
+      "Description": "sdfdffdss",
+      "RegisteredTime": "2025-07-09T00:55:49.6491344+02:00",
+      "StartTime": null,
+      "CompletedTime": null,
+      "Deadline": null,
+      "Priority": "Medium",
+      "IsStarted": false,
+      "IsCompleted": false,
+      "Category": "adad",
+      "Duration": null
+    },
+    {
+      "Title": "sdassda",
+      "Description": "sdsadasd",
+      "RegisteredTime": "2025-07-09T22:37:28.9499076+02:00",
+      "StartTime": null,
+      "CompletedTime": null,
+      "Deadline": null,
+      "Priority": "High",
+      "IsStarted": false,
+      "IsCompleted": false,
+      "Category": "Uncategorized",
+      "Duration": null
+    },
+    {
+      "Title": "gg",
+      "Description": "ggg",
+      "RegisteredTime": "2025-07-13T22:30:52.4459727+02:00",
+      "StartTime": null,
+      "CompletedTime": null,
+      "Deadline": null,
+      "Priority": "Medium",
+      "IsStarted": false,
+      "IsCompleted": false,
+      "Category": "Uncategorized",
       "Duration": null
     }
   ],
@@ -152,10 +269,10 @@
       "StartTime": null,
       "CompletedTime": null,
       "Deadline": null,
+      "Priority": "Normal",
       "IsStarted": false,
       "IsCompleted": false,
       "Category": "none",
-      "Priority": "Normal",
       "Duration": null
     }
   ]
