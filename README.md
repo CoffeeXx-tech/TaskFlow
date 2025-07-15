@@ -29,9 +29,9 @@ To install the package manually:
 ```bash
 dotnet add package Spectre.Console
 
-```
-All CLI styling (colors, layouts, prompts) is implemented using Spectre's built-in tools.
 
+All CLI styling (colors, layouts, prompts) is implemented using Spectre's built-in tools.
+``````
 🗂️ Project Structure
 ├── Program.cs             # Main menu / entry-point
 ├── Models
@@ -43,7 +43,7 @@ All CLI styling (colors, layouts, prompts) is implemented using Spectre's built-
 │   ├── TaskService.cs     # CRUD + timers + colored priorities
 │   └── CategoryService.cs # CRUD + colored selection
 └── *.json                 # Local data stores
-
+```
 🚀 Running the App
 # 1. Clone
 git clone https://github.com/<your‑user>/FlowTask.git
