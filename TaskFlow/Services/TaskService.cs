@@ -20,13 +20,13 @@ public class TaskService
     {
         if (currentUser == null || string.IsNullOrWhiteSpace(currentUser.Username))
         {
-            Console.WriteLine("You must be logged in to add tasks.");
+            AnsiConsole.MarkupLine("[orangered1]You must be logged in to add tasks.[/]");
             return;
         }
-        Console.Write("Enter task title: ");
+        AnsiConsole.Markup("Enter task [skyblue1]title: [/]");
         string title = Console.ReadLine()?.Trim() ?? "";
 
-        Console.Write("Enter task description: ");
+        AnsiConsole.Markup("Enter task [skyblue1]description: [/]");
         string description = Console.ReadLine()?.Trim() ?? "";
 
         var categories = categoryService.GetCategories(currentUser);
@@ -37,7 +37,7 @@ public class TaskService
             var selectedCategory = AnsiConsole.Prompt(
                 new SelectionPrompt<Category>()
                     .Title("Choose a [skyblue1]category[/] for this task:")
-                    .HighlightStyle("purple on black")
+                    .HighlightStyle("skyblue1 on black")
                     .UseConverter(c => $"[{c.Color}]{c.Name}[/]")
                     .AddChoices(categories)
             );
@@ -46,11 +46,11 @@ public class TaskService
         }
         else
         {
-            AnsiConsole.MarkupLine("[yellow]No categories found. Using default: None[/]");
+            AnsiConsole.MarkupLine("[orangered1]No categories found. Using default: None[/]");
         }
 
 
-        Console.Write("Enter deadline (dd:MM:yyyy) or leave empty: ");
+        AnsiConsole.MarkupLine("Enter [skyblue1]deadline[/] (dd:MM:yyyy) or leave empty: ");
         string deadlineInput = Console.ReadLine()?.Trim() ?? "";
 
         DateTime? deadline = null;
@@ -62,17 +62,24 @@ public class TaskService
             }
             else
             {
-                Console.WriteLine("Invalid date format. Skipping deadline.");
+                AnsiConsole.MarkupLine($"[orangered1]Invalid date format. Skipping deadline.[/]");
             }
         }
         var priorities = new List<string> { "High", "Medium", "Low" };
-
         var selectedPriority = AnsiConsole.Prompt(
             new SelectionPrompt<string>()
                 .Title("Choose task priority:")
-                .HighlightStyle("purple on black")
+                .HighlightStyle("white on black")
+                .UseConverter(p => p switch           
+                {
+                    "High"   => "[red]High[/]",
+                    "Medium" => "[orange1]Medium[/]",
+                    "Low"    => "[yellow1]Low[/]",
+                    _        => p
+                })
                 .AddChoices(priorities)
         );
+
         var task = new TaskItem
         {
             Title = title,
@@ -89,7 +96,7 @@ public class TaskService
         userTasks[currentUser.Username].Add(task);
         SaveTasks();
 
-        Console.WriteLine("Task added successfully.");
+        AnsiConsole.MarkupLine($"Task added [skyblue1]successfully.[/]");
     }
 
     public void ShowTasks(User currentUser, CategoryService categoryService)
@@ -147,7 +154,7 @@ public class TaskService
         }
 
         AnsiConsole.Write(table);
-        AnsiConsole.MarkupLine("\n[bold yellow]Select a task by its [aqua]ID[/] to perform an action.[/]");
+        AnsiConsole.MarkupLine("\nSelect a task by its [skyblue1]ID[/] to perform an action.");
         AnsiConsole.MarkupLine("[grey](Or press Enter to return to menu)[/]");
 
         while (true)
@@ -162,7 +169,7 @@ public class TaskService
                 var action = AnsiConsole.Prompt(
                     new SelectionPrompt<string>()
                         .Title($"[bold skyblue1]Choose action for task [aqua]{selectedTask.Title}[/]:[/]")
-                        .HighlightStyle("purple on black")
+                        .HighlightStyle("skyblue1 on black")
                         .AddChoices([
                             "Start",
                         "Stop",
@@ -186,7 +193,7 @@ public class TaskService
                         }
                         else
                         {
-                            AnsiConsole.MarkupLine("[yellow]Task already started.[/]");
+                            AnsiConsole.MarkupLine("[orangered1]Task already started.[/]");
                         }
                         break;
 
@@ -204,7 +211,7 @@ public class TaskService
                         }
                         else
                         {
-                            AnsiConsole.MarkupLine("[yellow]Task not started or already completed.[/]");
+                            AnsiConsole.MarkupLine("[orangered1]Task not started or already completed.[/]");
                         }
                         break;
 
@@ -217,21 +224,21 @@ public class TaskService
                     case "Unmark Completed":
                         selectedTask.IsCompleted = false;
                         selectedTask.CompletedTime = null;
-                        AnsiConsole.MarkupLine("[yellow]Task unmarked as completed.[/]");
+                        AnsiConsole.MarkupLine("[orangered1]Task unmarked as completed.[/]");
                         break;
 
                     case "Edit":
-                        Console.Write("New title (leave blank to keep current): ");
+                        AnsiConsole.Markup("New [skyblue1]title[/] (leave blank to keep current): ");
                         string? newTitle = Console.ReadLine();
                         if (!string.IsNullOrWhiteSpace(newTitle))
                             selectedTask.Title = newTitle;
 
-                        Console.Write("New description (leave blank to keep current): ");
+                        AnsiConsole.Markup("New [skyblue1]description[/] (leave blank to keep current): ");
                         string? newDesc = Console.ReadLine();
                         if (!string.IsNullOrWhiteSpace(newDesc))
                             selectedTask.Description = newDesc;
 
-                        Console.Write("New deadline (dd:MM:yyyy) or leave empty: ");
+                        AnsiConsole.Markup("New [skyblue1]deadline[/] (dd:MM:yyyy) or leave empty: ");
                         string? deadlineInput = Console.ReadLine();
                         if (!string.IsNullOrWhiteSpace(deadlineInput) &&
                             DateTime.TryParseExact(deadlineInput, "dd:MM:yyyy", CultureInfo.InvariantCulture, DateTimeStyles.None, out var newDeadline))
@@ -241,47 +248,44 @@ public class TaskService
 
                         var priorities = new List<string> { "High", "Medium", "Low" };
 
-var newPriority = AnsiConsole.Prompt(
-    new SelectionPrompt<string>()
-        .Title("Choose new priority (or Cancel to keep current):")
-        .HighlightStyle("purple on black")
-        .UseConverter(p => p switch   
-        {
-            "High"   => "[red]High[/]",
-            "Medium" => "[orange1]Medium[/]",
-            "Low"    => "[yellow1]Low[/]",
-            "Cancel" => "[grey]Cancel[/]",
-            _        => p
-        })
-        .AddChoices(priorities.Concat(new[] { "Cancel" }))
-);
+                        var newPriority = AnsiConsole.Prompt(
+                        new SelectionPrompt<string>()
+                            .Title("Choose new [skyblue1]priority[/] (or Cancel to keep current):")
+                            .HighlightStyle("white on black")
+                            .UseConverter(p => p switch   
+                            {
+                                "High"   => "[red]High[/]",
+                                "Medium" => "[orange1]Medium[/]",
+                                "Low"    => "[yellow1]Low[/]",
+                                "Cancel" => "[grey]Cancel[/]",
+                                _        => p
+                            })
+                            .AddChoices(priorities.Concat(new[] { "Cancel" }))
+                    );
 
 
-    if (newPriority != "Cancel")
-    selectedTask.Priority = newPriority;
+                        if (newPriority != "Cancel")
+                        selectedTask.Priority = newPriority;
 
+                        var categories = categoryService.GetCategories(currentUser);
+                        if (categories.Count > 0)
+                        {
+                            var selectedCategory = AnsiConsole.Prompt(
+                                new SelectionPrompt<Category>()
+                                    .Title("Choose new [skyblue1]category[/] (or skip):")
+                                    .HighlightStyle("skyblue1 on black")
+                                    .UseConverter(c => $"[{c.Color}]{c.Name}[/]")
+                                    .AddChoices(categories.Concat(new[] { new Category { Name = "Keep current", Color = "grey" } }))
+                        );
 
-var categories = categoryService.GetCategories(currentUser);
-if (categories.Count > 0)
-{
-    var selectedCategory = AnsiConsole.Prompt(
-        new SelectionPrompt<Category>()
-            .Title("Choose new [skyblue1]category[/] (or skip):")
-            .HighlightStyle("purple on black")
-            .UseConverter(c => $"[{c.Color}]{c.Name}[/]")
-            .AddChoices(categories.Concat(new[] { new Category { Name = "Keep current", Color = "grey" } }))
-    );
-
-    if (selectedCategory.Name != "Keep current")
-        selectedTask.Category = selectedCategory.Name;
-}
-else
-{
-    AnsiConsole.MarkupLine("[yellow]No categories found. Keeping current.[/]");
-}
-
-
-                        AnsiConsole.MarkupLine("[green]Task updated.[/]");
+                        if (selectedCategory.Name != "Keep current")
+                            selectedTask.Category = selectedCategory.Name;
+                        }
+                        else
+                        {
+                            AnsiConsole.MarkupLine("[orangered1]No categories found. Keeping current.[/]");
+                        }
+                        AnsiConsole.MarkupLine("[skyblue1]Task updated.[/]");
                         break;
 
                     case "Delete":

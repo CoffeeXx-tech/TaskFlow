@@ -1,39 +1,816 @@
 {
   "admin": [
     {
-      "Name": "Silver",
+      "Name": "Personal",
       "Color": "purple",
       "Description": ""
     },
     {
-      "Name": "adad",
+      "Name": "Work",
       "Color": "green",
       "Description": ""
     },
     {
-      "Name": "d",
+      "Name": "Health",
       "Color": "red",
       "Description": "hh"
     },
     {
-      "Name": "dmlasd",
+      "Name": "Maintenance",
       "Color": "blue",
       "Description": ""
     },
     {
-      "Name": "h",
+      "Name": "Education",
       "Color": "purple",
       "Description": "kk"
     },
     {
-      "Name": "fgdddf",
-      "Color": "aqua",
-      "Description": "dffddffdf"
+      "Name": "Hobby",
+      "Color": "green",
+      "Description": "hobby"
+    }
+  ],
+  "user1": [
+    {
+      "Name": "Health",
+      "Color": "green",
+      "Description": "Physical well-being activities"
     },
     {
-      "Name": "fine",
+      "Name": "Work",
+      "Color": "blue",
+      "Description": "Professional and office-related tasks"
+    },
+    {
+      "Name": "Maintenance",
+      "Color": "gray",
+      "Description": "Household or regular upkeep tasks"
+    },
+    {
+      "Name": "Hobby",
+      "Color": "purple",
+      "Description": "Leisure and creative time"
+    },
+    {
+      "Name": "Personal",
+      "Color": "orange",
+      "Description": "Self-care and home responsibilities"
+    },
+    {
+      "Name": "Education",
+      "Color": "teal",
+      "Description": "Learning and development"
+    },
+    {
+      "Name": "Finance",
+      "Color": "goldenrod",
+      "Description": "Budgeting and payments"
+    }
+  ],
+  "apollo": [
+    {
+      "Name": "Work",
+      "Color": "blue",
+      "Description": "Tasks related to client or company duties"
+    },
+    {
+      "Name": "Personal",
+      "Color": "orange",
+      "Description": "Home and lifestyle activities"
+    },
+    {
+      "Name": "Health",
+      "Color": "green",
+      "Description": "Exercise and well-being"
+    },
+    {
+      "Name": "Hobby",
+      "Color": "violet",
+      "Description": "Creative or leisure interests"
+    },
+    {
+      "Name": "Career",
+      "Color": "darkcyan",
+      "Description": "Professional growth and job tracking"
+    }
+  ],
+  "breeze": [
+    {
+      "Name": "Work",
+      "Color": "blue",
+      "Description": "Professional projects and duties"
+    },
+    {
+      "Name": "Personal",
+      "Color": "orange",
+      "Description": "Private errands and everyday life"
+    },
+    {
+      "Name": "Maintenance",
+      "Color": "gray",
+      "Description": "Repairs, upkeep, cleaning"
+    },
+    {
+      "Name": "Career",
+      "Color": "navy",
+      "Description": "Long\u2011term professional growth"
+    },
+    {
+      "Name": "Social",
+      "Color": "pink",
+      "Description": "Meet\u2011ups and friends"
+    },
+    {
+      "Name": "Finance",
+      "Color": "gold",
+      "Description": "Bills, budgeting, money matters"
+    },
+    {
+      "Name": "Education",
+      "Color": "teal",
+      "Description": "Learning and skills"
+    },
+    {
+      "Name": "Health",
+      "Color": "green",
+      "Description": "Exercise and wellness"
+    }
+  ],
+  "cobalt": [
+    {
+      "Name": "Work",
+      "Color": "blue",
+      "Description": "Company tasks and coding"
+    },
+    {
+      "Name": "Personal",
+      "Color": "orange",
+      "Description": "Home \u0026 everyday errands"
+    },
+    {
+      "Name": "Maintenance",
+      "Color": "gray",
+      "Description": "Household / gear upkeep"
+    },
+    {
+      "Name": "Health",
+      "Color": "green",
+      "Description": "Fitness \u0026 well\u2011being"
+    },
+    {
+      "Name": "Finance",
+      "Color": "gold",
+      "Description": "Budget reviews \u0026 payments"
+    },
+    {
+      "Name": "Education",
+      "Color": "teal",
+      "Description": "Courses and reading"
+    },
+    {
+      "Name": "Social",
+      "Color": "pink",
+      "Description": "Family \u0026 friends calls"
+    },
+    {
+      "Name": "Career",
+      "Color": "navy",
+      "Description": "Professional development"
+    }
+  ],
+  "deltafox": [
+    {
+      "Name": "Career",
+      "Color": "navy",
+      "Description": "Long\u2011term professional growth"
+    },
+    {
+      "Name": "Education",
+      "Color": "aqua",
+      "Description": "Learning and courses"
+    },
+    {
+      "Name": "Finance",
+      "Color": "gold",
+      "Description": "Bills and money matters"
+    },
+    {
+      "Name": "Health",
+      "Color": "green",
+      "Description": "Fitness and wellness"
+    },
+    {
+      "Name": "Home",
+      "Color": "gray",
+      "Description": "Household chores"
+    },
+    {
+      "Name": "Maintenance",
+      "Color": "gray",
+      "Description": "Upkeep and repairs"
+    },
+    {
+      "Name": "Personal",
+      "Color": "orange1",
+      "Description": "Daily life and personal errands"
+    },
+    {
+      "Name": "Work",
+      "Color": "blue",
+      "Description": "Professional tasks and meetings"
+    }
+  ],
+  "ember": [
+    {
+      "Name": "Creative",
+      "Color": "purple",
+      "Description": "Writing, art and ideas"
+    },
+    {
+      "Name": "Finance",
+      "Color": "gold",
+      "Description": "Bills, budgeting, insurance"
+    },
+    {
+      "Name": "Health",
+      "Color": "green",
+      "Description": "Fitness and well\u2011being"
+    },
+    {
+      "Name": "Home",
+      "Color": "gray",
+      "Description": "Household repairs \u0026 upkeep"
+    },
+    {
+      "Name": "Hobby",
+      "Color": "magenta",
+      "Description": "Leisure activities"
+    },
+    {
+      "Name": "Personal",
+      "Color": "orange1",
+      "Description": "Private errands and life"
+    },
+    {
+      "Name": "Work",
+      "Color": "blue",
+      "Description": "Company work and emails"
+    }
+  ],
+  "frosty": [
+    {
+      "Name": "Career",
+      "Color": "navy",
+      "Description": "Professional development"
+    },
+    {
+      "Name": "Creative",
+      "Color": "purple",
+      "Description": "Blogging and content"
+    },
+    {
+      "Name": "Education",
+      "Color": "aqua",
+      "Description": "Courses and study"
+    },
+    {
+      "Name": "Finance",
+      "Color": "gold",
+      "Description": "Budget \u0026 bills"
+    },
+    {
+      "Name": "Health",
+      "Color": "green",
+      "Description": "Yoga, exercise, wellness"
+    },
+    {
+      "Name": "Home",
+      "Color": "gray",
+      "Description": "Cleaning \u0026 household chores"
+    },
+    {
+      "Name": "Personal",
+      "Color": "orange1",
+      "Description": "Family, personal errands"
+    },
+    {
+      "Name": "Travel",
       "Color": "skyblue1",
-      "Description": "sa"
+      "Description": "Trip preparation"
+    },
+    {
+      "Name": "Work",
+      "Color": "blue",
+      "Description": "Job\u2011related tasks \u0026 meetings"
+    }
+  ],
+  "galaxy": [
+    {
+      "Name": "Work",
+      "Color": "blue",
+      "Description": "Project tasks, reports, meetings"
+    },
+    {
+      "Name": "Personal",
+      "Color": "orange1",
+      "Description": "Private errands and daily life"
+    },
+    {
+      "Name": "Home",
+      "Color": "gray",
+      "Description": "Household chores \u0026 repairs"
+    },
+    {
+      "Name": "Leisure",
+      "Color": "purple",
+      "Description": "Movies, hobbies, relaxation"
+    },
+    {
+      "Name": "Health",
+      "Color": "green",
+      "Description": "Fitness and well\u2011being"
+    },
+    {
+      "Name": "IT",
+      "Color": "aqua",
+      "Description": "Backups, tech maintenance"
+    }
+  ],
+  "harbor": [
+    {
+      "Name": "Work",
+      "Color": "blue",
+      "Description": "Company work, webinars, slides"
+    },
+    {
+      "Name": "Health",
+      "Color": "green",
+      "Description": "Check\u2011ups, fitness, wellness"
+    },
+    {
+      "Name": "Finance",
+      "Color": "gold",
+      "Description": "Bills and budget"
+    },
+    {
+      "Name": "Leisure",
+      "Color": "purple",
+      "Description": "Reading \u0026 relaxation"
+    },
+    {
+      "Name": "Home",
+      "Color": "gray",
+      "Description": "Cleaning \u0026 household upkeep"
+    },
+    {
+      "Name": "Personal",
+      "Color": "orange1",
+      "Description": "Documents and personal tasks"
+    },
+    {
+      "Name": "Family",
+      "Color": "red",
+      "Description": "Calls and family events"
+    },
+    {
+      "Name": "Career",
+      "Color": "navy",
+      "Description": "Resume \u0026 professional growth"
+    },
+    {
+      "Name": "IT",
+      "Color": "deepskyblue1",
+      "Description": "Software updates \u0026 tech"
+    }
+  ],
+  "ionic": [
+    {
+      "Name": "Home",
+      "Color": "gray",
+      "Description": "Plant care, laundry, chores"
+    },
+    {
+      "Name": "Work",
+      "Color": "blue",
+      "Description": "Team meetings, coding tasks"
+    },
+    {
+      "Name": "Finance",
+      "Color": "gold",
+      "Description": "Insurance \u0026 bills"
+    },
+    {
+      "Name": "Personal",
+      "Color": "orange1",
+      "Description": "Daily errands, pet care"
+    },
+    {
+      "Name": "Hobby",
+      "Color": "magenta",
+      "Description": "Guitar practice, creative fun"
+    },
+    {
+      "Name": "Learning",
+      "Color": "aqua",
+      "Description": "Courses, CSS Grid, tutorials"
+    },
+    {
+      "Name": "Leisure",
+      "Color": "purple",
+      "Description": "Vacations, reading, downtime"
+    }
+  ],
+  "krypton": [
+    {
+      "Name": "Work",
+      "Color": "blue",
+      "Description": "Budgets, reviews, retrospectives"
+    },
+    {
+      "Name": "Personal",
+      "Color": "orange1",
+      "Description": "Daily errands and life admin"
+    },
+    {
+      "Name": "Home",
+      "Color": "gray",
+      "Description": "Household repairs \u0026 chores"
+    },
+    {
+      "Name": "Health",
+      "Color": "green",
+      "Description": "Fitness and wellness"
+    },
+    {
+      "Name": "Leisure",
+      "Color": "purple",
+      "Description": "Trips and relaxation"
+    },
+    {
+      "Name": "IT",
+      "Color": "aqua",
+      "Description": "Backups \u0026 tech tasks"
+    },
+    {
+      "Name": "Learning",
+      "Color": "magenta",
+      "Description": "Articles and language study"
+    }
+  ],
+  "lumen": [
+    {
+      "Name": "Work",
+      "Color": "blue",
+      "Description": "Team meetings \u0026 project tasks"
+    },
+    {
+      "Name": "Creative",
+      "Color": "purple",
+      "Description": "Design and content creation"
+    },
+    {
+      "Name": "Personal",
+      "Color": "orange1",
+      "Description": "Errands \u0026 daily life"
+    },
+    {
+      "Name": "Learning",
+      "Color": "aqua",
+      "Description": "Courses and study goals"
+    },
+    {
+      "Name": "Health",
+      "Color": "green",
+      "Description": "Yoga and fitness"
+    },
+    {
+      "Name": "Finance",
+      "Color": "gold",
+      "Description": "Invoices and budgets"
+    },
+    {
+      "Name": "Hobby",
+      "Color": "magenta",
+      "Description": "Baking and other passions"
+    },
+    {
+      "Name": "Career",
+      "Color": "navy",
+      "Description": "Portfolio \u0026 professional growth"
+    },
+    {
+      "Name": "Home",
+      "Color": "gray",
+      "Description": "Furniture \u0026 household chores"
+    },
+    {
+      "Name": "Leisure",
+      "Color": "skyblue1",
+      "Description": "Entertainment \u0026 relaxation"
+    }
+  ],
+  "monsoon": [
+    {
+      "Name": "Home",
+      "Color": "gray",
+      "Description": "Garage, plants, household"
+    },
+    {
+      "Name": "Work",
+      "Color": "blue",
+      "Description": "Meetings and project sync"
+    },
+    {
+      "Name": "Learning",
+      "Color": "aqua",
+      "Description": "Webinars \u0026 study"
+    },
+    {
+      "Name": "Career",
+      "Color": "navy",
+      "Description": "Writing \u0026 professional content"
+    },
+    {
+      "Name": "Personal",
+      "Color": "orange1",
+      "Description": "Family \u0026 personal errands"
+    },
+    {
+      "Name": "IT",
+      "Color": "deepskyblue1",
+      "Description": "Backups \u0026 tech tasks"
+    },
+    {
+      "Name": "Health",
+      "Color": "green",
+      "Description": "Workouts and wellness"
+    },
+    {
+      "Name": "Leisure",
+      "Color": "purple",
+      "Description": "Relaxing activities"
+    }
+  ],
+  "onyx": [
+    {
+      "Name": "Home",
+      "Color": "gray",
+      "Description": "Laundry, painting, chores"
+    },
+    {
+      "Name": "Health",
+      "Color": "green",
+      "Description": "Appointments \u0026 wellness"
+    },
+    {
+      "Name": "Work",
+      "Color": "blue",
+      "Description": "Client calls \u0026 exports"
+    },
+    {
+      "Name": "IT",
+      "Color": "aqua",
+      "Description": "Organising digital life"
+    },
+    {
+      "Name": "Personal",
+      "Color": "orange1",
+      "Description": "Pet care \u0026 errands"
+    },
+    {
+      "Name": "Hobby",
+      "Color": "magenta",
+      "Description": "Music practice \u0026 fun"
+    },
+    {
+      "Name": "Finance",
+      "Color": "gold",
+      "Description": "Insurance \u0026 payments"
+    }
+  ],
+  "quasar": [
+    {
+      "Name": "Work",
+      "Color": "blue",
+      "Description": "Projects, code reviews, team sync"
+    },
+    {
+      "Name": "Personal",
+      "Color": "orange1",
+      "Description": "Shopping and everyday errands"
+    },
+    {
+      "Name": "Health",
+      "Color": "green",
+      "Description": "Meditation, gym, well\u2011being"
+    },
+    {
+      "Name": "IT",
+      "Color": "aqua",
+      "Description": "Updates, backups, tech upkeep"
+    },
+    {
+      "Name": "Learning",
+      "Color": "magenta",
+      "Description": "Courses and self\u2011study"
+    },
+    {
+      "Name": "Social",
+      "Color": "skyblue1",
+      "Description": "Meet\u2011ups and events"
+    },
+    {
+      "Name": "Finance",
+      "Color": "gold",
+      "Description": "Budgeting and money matters"
+    }
+  ],
+  "raven": [
+    {
+      "Name": "Work",
+      "Color": "blue",
+      "Description": "Fixes, tasks and UI bugs"
+    },
+    {
+      "Name": "Career",
+      "Color": "navy",
+      "Description": "CV, portfolio, professional growth"
+    },
+    {
+      "Name": "Finance",
+      "Color": "gold",
+      "Description": "Bills and payments"
+    },
+    {
+      "Name": "Health",
+      "Color": "green",
+      "Description": "Dental \u0026 fitness"
+    },
+    {
+      "Name": "Personal",
+      "Color": "orange1",
+      "Description": "Library \u0026 personal life"
+    },
+    {
+      "Name": "Hobby",
+      "Color": "purple",
+      "Description": "Design sketches \u0026 creativity"
+    },
+    {
+      "Name": "Planning",
+      "Color": "skyblue1",
+      "Description": "Weekly reviews \u0026 scheduling"
+    },
+    {
+      "Name": "Learning",
+      "Color": "aqua",
+      "Description": "Conferences \u0026 research"
+    }
+  ],
+  "tidal": [
+    {
+      "Name": "Work",
+      "Color": "blue",
+      "Description": "Presentations \u0026 reports"
+    },
+    {
+      "Name": "Home",
+      "Color": "gray",
+      "Description": "Plumber, garage, household"
+    },
+    {
+      "Name": "Health",
+      "Color": "green",
+      "Description": "Yoga and wellness"
+    },
+    {
+      "Name": "Finance",
+      "Color": "gold",
+      "Description": "Taxes and budgeting"
+    },
+    {
+      "Name": "Personal",
+      "Color": "orange1",
+      "Description": "Trips and groceries"
+    },
+    {
+      "Name": "Hobby",
+      "Color": "magenta",
+      "Description": "Reading \u0026 interests"
+    },
+    {
+      "Name": "Social",
+      "Color": "skyblue1",
+      "Description": "Movie nights \u0026 friends"
+    }
+  ],
+  "umbra": [
+    {
+      "Name": "Work",
+      "Color": "blue",
+      "Description": "Meetings, email, tasks"
+    },
+    {
+      "Name": "Personal",
+      "Color": "orange1",
+      "Description": "Family calls \u0026 errands"
+    },
+    {
+      "Name": "Health",
+      "Color": "green",
+      "Description": "Runs, doctor, fitness"
+    },
+    {
+      "Name": "Finance",
+      "Color": "gold",
+      "Description": "Bills \u0026 payments"
+    },
+    {
+      "Name": "Learning",
+      "Color": "aqua",
+      "Description": "Tutorials \u0026 study"
+    },
+    {
+      "Name": "Social",
+      "Color": "skyblue1",
+      "Description": "Parties \u0026 social plans"
+    }
+  ],
+  "vertex": [
+    {
+      "Name": "Work",
+      "Color": "blue",
+      "Description": "Presentations, reports, meetings"
+    },
+    {
+      "Name": "Home",
+      "Color": "gray",
+      "Description": "Repairs, cleaning \u0026 organisation"
+    },
+    {
+      "Name": "Health",
+      "Color": "green",
+      "Description": "Yoga sessions \u0026 wellbeing"
+    },
+    {
+      "Name": "Finance",
+      "Color": "gold",
+      "Description": "Taxes, bills \u0026 budgeting"
+    },
+    {
+      "Name": "Personal",
+      "Color": "orange1",
+      "Description": "Trips, groceries, daily errands"
+    },
+    {
+      "Name": "Hobby",
+      "Color": "magenta",
+      "Description": "Reading \u0026 leisure interests"
+    },
+    {
+      "Name": "Social",
+      "Color": "skyblue1",
+      "Description": "Movie nights \u0026 friends"
+    }
+  ],
+  "wanderer": [
+    {
+      "Name": "Work",
+      "Color": "blue",
+      "Description": "Meetings, emails, work tasks"
+    },
+    {
+      "Name": "Personal",
+      "Color": "orange1",
+      "Description": "Family calls \u0026 daily errands"
+    },
+    {
+      "Name": "Health",
+      "Color": "green",
+      "Description": "Runs, doctor visits, fitness"
+    },
+    {
+      "Name": "Finance",
+      "Color": "gold",
+      "Description": "Bills, credit\u2011card payments"
+    },
+    {
+      "Name": "Learning",
+      "Color": "aqua",
+      "Description": "Tutorials \u0026 self\u2011study"
+    },
+    {
+      "Name": "Social",
+      "Color": "skyblue1",
+      "Description": "Parties \u0026 social plans"
+    }
+  ],
+  "rester1": [
+    {
+      "Name": "ssss",
+      "Color": "blue",
+      "Description": "ddssdsda"
     }
   ]
 }

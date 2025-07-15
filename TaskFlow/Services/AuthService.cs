@@ -81,7 +81,7 @@ public class AuthService
 
         do
         {
-            AnsiConsole.MarkupLine($"[skyblue1]Choose username[/] (min. 5 characters, letters or digits): ");
+            AnsiConsole.Markup($"[skyblue1]Choose username[/] (min. 5 characters, letters or digits): ");
             username = Console.ReadLine()?.Trim() ?? "";
 
             if (string.IsNullOrWhiteSpace(username) || username.Length < 5 || !Regex.IsMatch(username, @"^[a-zA-Z0-9]+$"))
@@ -102,7 +102,7 @@ public class AuthService
 
         do
         {
-            AnsiConsole.MarkupLine($"[skyblue1]Choose password[/] (min. 5 characters, at least 1 digit, 1 lowercase, 1 uppercase, 1 special): ");
+            AnsiConsole.Markup($"[skyblue1]Choose password[/] (min. 5 characters, at least 1 digit, 1 lowercase, 1 uppercase, 1 special): ");
             password = Console.ReadLine()?.Trim() ?? "";
 
             Console.Write("Confirm password: ");
@@ -190,10 +190,10 @@ public class AuthService
         string description = Console.ReadLine()?.Trim() ?? "";
 
         var selected = AnsiConsole.Prompt(
-    new SelectionPrompt<string>()
-        .Title("[aquamarine1]Select priority:[/]")
-        .AddChoices("High", "Medium", "Low")
-);
+        new SelectionPrompt<string>()
+            .Title("[skyblue1]Select priority:[/]")
+            .AddChoices("High", "Medium", "Low")
+        );
 
         var task = new TaskItem
         {
@@ -207,14 +207,14 @@ public class AuthService
 
         CurrentUser.Tasks.Add(task);
         SaveUsers();
-        Console.WriteLine("Task added successfully.");
+        AnsiConsole.MarkupLine($"Task added [skyblue1]successfully.[/]");
     }
 
     public void StartTask()
     {
         if (CurrentUser == null)
         {
-            Console.WriteLine("Please log in to start a task.");
+            AnsiConsole.MarkupLine($"Please [orangered1]log in[/] to start a task.");
             return;
         }
 
@@ -224,7 +224,7 @@ public class AuthService
 
         if (!pendingTasks.Any())
         {
-            Console.WriteLine("No tasks to start.");
+            AnsiConsole.MarkupLine($"[orangered1]No tasks to start.[/]");
             return;
         }
 
@@ -245,7 +245,7 @@ public class AuthService
         }
         else
         {
-            Console.WriteLine("Invalid selection.");
+            AnsiConsole.MarkupLine($"[orangered1]Invalid selection.[/]");
         }
     }
 
@@ -263,7 +263,7 @@ public class AuthService
 
         if (!startedTasks.Any())
         {
-            Console.WriteLine("No started tasks to complete.");
+            AnsiConsole.MarkupLine($"[orangered1]No started tasks to complete.[/]");
             return;
         }
 
@@ -284,7 +284,7 @@ public class AuthService
         }
         else
         {
-            Console.WriteLine("Invalid selection.");
+            AnsiConsole.MarkupLine($"[orangered1]Invalid selection.[/]");
         }
     }
 

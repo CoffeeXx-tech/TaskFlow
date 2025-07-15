@@ -1,5 +1,10 @@
 [
   {
+    "Username": "tester",
+    "Password": "1",
+    "Tasks": []
+  },
+  {
     "Username": "admin",
     "Password": "admin123",
     "Tasks": []
@@ -10,33 +15,128 @@
     "Tasks": []
   },
   {
-    "Username": "ffssf",
-    "Password": "aAa67*",
+    "Username": "apollo",
+    "Password": "Ap0llo*7",
     "Tasks": []
   },
   {
-    "Username": "deama",
-    "Password": "Ab3*7",
+    "Username": "breeze",
+    "Password": "Br33ze^9",
     "Tasks": []
   },
   {
-    "Username": "ssaassaasas",
-    "Password": "aB5*7",
+    "Username": "cobalt",
+    "Password": "CoB@1t5",
     "Tasks": []
   },
   {
-    "Username": "sgbsdaasd",
-    "Password": "9hHu0*",
+    "Username": "deltafox",
+    "Password": "Df0x!42",
     "Tasks": []
   },
   {
-    "Username": "udername",
-    "Password": "9oO0*",
+    "Username": "ember",
+    "Password": "Emb3r$8",
     "Tasks": []
   },
   {
-    "Username": "kkkkkkk",
-    "Password": "As5^7",
+    "Username": "frosty",
+    "Password": "Fr0sty^6",
+    "Tasks": []
+  },
+  {
+    "Username": "galaxy",
+    "Password": "Gal@xy77",
+    "Tasks": []
+  },
+  {
+    "Username": "harbor",
+    "Password": "Harb0r#3",
+    "Tasks": []
+  },
+  {
+    "Username": "ionic",
+    "Password": "I0nic!11",
+    "Tasks": []
+  },
+  {
+    "Username": "jupiter",
+    "Password": "Jup1t3r*",
+    "Tasks": []
+  },
+  {
+    "Username": "krypton",
+    "Password": "KrYp7on\u00265",
+    "Tasks": []
+  },
+  {
+    "Username": "lumen",
+    "Password": "Lum3n^22",
+    "Tasks": []
+  },
+  {
+    "Username": "monsoon",
+    "Password": "M0n$00n9",
+    "Tasks": []
+  },
+  {
+    "Username": "nebula",
+    "Password": "N3bu1a#",
+    "Tasks": []
+  },
+  {
+    "Username": "onyx",
+    "Password": "OnyX@66",
+    "Tasks": []
+  },
+  {
+    "Username": "phoenix",
+    "Password": "Ph0enix!",
+    "Tasks": []
+  },
+  {
+    "Username": "quasar",
+    "Password": "Qu4sar$4",
+    "Tasks": []
+  },
+  {
+    "Username": "raven",
+    "Password": "Rav3n^18",
+    "Tasks": []
+  },
+  {
+    "Username": "solstice",
+    "Password": "S0lst1ce%",
+    "Tasks": []
+  },
+  {
+    "Username": "tidal",
+    "Password": "T1dal#2",
+    "Tasks": []
+  },
+  {
+    "Username": "umbra",
+    "Password": "Umbr@77",
+    "Tasks": []
+  },
+  {
+    "Username": "vertex",
+    "Password": "V3rt3x*",
+    "Tasks": []
+  },
+  {
+    "Username": "wanderer",
+    "Password": "W4nd3r^5",
+    "Tasks": []
+  },
+  {
+    "Username": "ssssss",
+    "Password": "A1$5o",
+    "Tasks": []
+  },
+  {
+    "Username": "rester1",
+    "Password": "T3sT#r",
     "Tasks": []
   }
 ]

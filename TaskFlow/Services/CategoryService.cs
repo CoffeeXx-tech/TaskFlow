@@ -20,7 +20,7 @@ public class CategoryService
     }
 
     string name = AnsiConsole.Ask<string>(
-        "Enter [green]category name[/] (max 20 characters):").Trim();
+        "Enter [skyblue1]category name[/] (max 20 characters):").Trim();
 
     if (string.IsNullOrWhiteSpace(name) || name.Length > 20 ||
         name.Equals("None", StringComparison.OrdinalIgnoreCase) ||
@@ -31,18 +31,18 @@ public class CategoryService
     }
 
     string description = AnsiConsole.Ask<string>(
-        "Enter [green]optional description[/] (or leave empty):").Trim();
+        "Enter [skyblue1]optional description[/] (or leave empty):").Trim();
 
     string[] colors = {
         "red","green","blue","yellow","purple",
-        "aqua","orange1","deepskyblue1","skyblue1","white"
+        "aqua","orange1","deepskyblue1","white"
     };
 
     string color = AnsiConsole.Prompt(
         new SelectionPrompt<string>()
-            .Title("Select a [green]color[/] for the category")
+            .Title("Select a [skyblue1]color[/] for the category")
             .PageSize(10)
-            .HighlightStyle("purple on black")
+            .HighlightStyle("white on black")
             .UseConverter(c => $"[{c}]{c}[/]")
             .AddChoices(colors));
 
@@ -58,7 +58,7 @@ public class CategoryService
     });
 
     SaveCategories();
-    AnsiConsole.MarkupLine($"[green]Category '{name}'[/] with color '[{color}]{color}[/]' added.");
+    AnsiConsole.MarkupLine($"[skyblue1]Category '{name}'[/] with color '[{color}]{color}[/]' added.");
 }
 
 
@@ -106,7 +106,7 @@ public void ShowCategories(User currentUser)
 
     if (!userCategories.ContainsKey(username) || userCategories[username].Count == 0)
     {
-        AnsiConsole.MarkupLine("[yellow]No categories found.[/]");
+        AnsiConsole.MarkupLine("[orangered1]No categories found.[/]");
         return;
     }
 
@@ -154,55 +154,56 @@ public void EditCategory(User currentUser)
         new SelectionPrompt<string>()
             .Title("Select [skyblue1]category[/] to edit:")
             .PageSize(10)
-            .HighlightStyle("skyblue1 on black")
+            .HighlightStyle("white on black")
             .AddChoices(categories.Select((cat, i) => $"{i + 1}. [{cat.Color}]{cat.Name}[/]")));
 
     int selectedIndex = int.Parse(selection.Split('.')[0]) - 1;
     var selectedCategory = categories[selectedIndex];
 
     string newName = AnsiConsole.Prompt(
-    new TextPrompt<string>($"Enter new name (or press Enter to keep '[{selectedCategory.Color}]{selectedCategory.Name}[/]'):")
+    new TextPrompt<string>($"[skyblue1]Enter new name [/](or press Enter to keep '[{selectedCategory.Color}]{selectedCategory.Name}[/]'):")
         .AllowEmpty() 
         .PromptStyle("skyblue1")
-);
+        );
 
-if (!string.IsNullOrWhiteSpace(newName) && newName.Length <= 20)
-{
-    selectedCategory.Name = newName.Trim();
-}
+        if (!string.IsNullOrWhiteSpace(newName) && newName.Length <= 20)
+        {
+            selectedCategory.Name = newName.Trim();
+        }
+       var colors = new List<string>
+        {
+            "Keep current",
+            "red", "green", "blue", "yellow",
+            "aqua", "orange1", "deepskyblue1", "white"
+        };
 
+        string newColor = AnsiConsole.Prompt(
+            new SelectionPrompt<string>()
+                .Title("[skyblue1]Choose a new color[/] (or Keep current):")
+                .PageSize(10)
+                .HighlightStyle("white on black")
+                .UseConverter(c => c == "Keep current"
+                    ? $"[gray]{c}[/]"          
+                    : $"[{c}]{c}[/]")                 
+                .AddChoices(colors)
+        );
 
-    var colors = new List<string>
-{
-    "Keep current",
-    "red", "green", "blue", "yellow", "aqua",
-    "orange1", "deepskyblue1", "skyblue1", "white"
-};
+        if (newColor != "Keep current")
+            selectedCategory.Color = newColor;
+            
+        string newDescription = AnsiConsole.Prompt(
+            new TextPrompt<string>("[skyblue1]Enter new description[/] (or press Enter to keep current):")
+                .AllowEmpty()               
+                .PromptStyle("skyblue1")       
+        );
 
-string newColor = AnsiConsole.Prompt(
-    new SelectionPrompt<string>()
-        .Title("Choose a new color (or Keep current):")
-        .PageSize(10)
-        .HighlightStyle("purple on black")
-        .AddChoices(colors));
+        if (!string.IsNullOrWhiteSpace(newDescription))
+        {
+            selectedCategory.Description = newDescription.Trim();
+        }
 
-if (newColor != "Keep current")          
-    selectedCategory.Color = newColor;
+        SaveCategories();
 
-string newDescription = AnsiConsole.Prompt(
-    new TextPrompt<string>("Enter new description (or press Enter to keep current):")
-        .AllowEmpty()               
-        .PromptStyle("skyblue1")       
-);
-
-if (!string.IsNullOrWhiteSpace(newDescription))
-{
-    selectedCategory.Description = newDescription.Trim();
-}
-
-SaveCategories();
-
-    AnsiConsole.MarkupLine($"Category updated [skyblue1]successfully![/]");
-}
-
+            AnsiConsole.MarkupLine($"Category updated [skyblue1]successfully![/]");
+        }
 }
