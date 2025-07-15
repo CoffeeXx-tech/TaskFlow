@@ -26,9 +26,10 @@ FlowTask uses the **[Spectre.Console](https://spectreconsole.net/)** library
 - `Table`, `FigletText`, `Panel`, `ProgressBar` — styled layout and widgets
 
 To install the package manually:
-
 ```bash
 dotnet add package Spectre.Console
+
+```
 All CLI styling (colors, layouts, prompts) is implemented using Spectre's built-in tools.
 
 🗂️ Project Structure
@@ -69,9 +70,9 @@ Delete them to reset all data.
 
             High → red
 
-            Medium → orange1
+            Medium → orange
 
-            Low → yellow1
+            Low → yellow
 
     Task Actions
     Start ⟶ Stop ⟶ Complete / Unmark / Edit / Change Category / Delete
@@ -84,4 +85,4 @@ System.Text.Json	Lightweight JSON persistence
 
 MIT (see LICENSE).
 
-FlowTask is a hobby / learning project — feel free to fork and improve!
+FlowTask is a hobby / learning project — feel free to fork, improve and open PRs!
