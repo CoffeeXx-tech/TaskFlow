@@ -31,7 +31,8 @@ dotnet add package Spectre.Console
 
 
 All CLI styling (colors, layouts, prompts) is implemented using Spectre's built-in tools.
-``````
+```
+```
 🗂️ Project Structure
 ├── Program.cs             # Main menu / entry-point
 ├── Models
